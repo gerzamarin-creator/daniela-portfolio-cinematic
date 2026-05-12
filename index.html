@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Daniela de Osma | Film Production Coordinator & Assistant Director</title>
+    <meta name="title" content="Daniela de Osma | Film Production Coordinator & Assistant Director">
+    <meta name="description" content="Elite multilingual Film Production Coordinator and Assistant Director. Experience in high-level European productions for Disney, Netflix, and Amazon.">
+    <meta name="keywords" content="Production Coordinator, Assistant Director, Film Production Europe, Daniela de Osma, Set Management, Bilingual Coordinator">
+    <meta name="author" content="Daniela de Osma">
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://danieladeosma.com/">
+    <meta property="og:title" content="Daniela de Osma | Film Production Coordinator">
+    <meta property="og:description" content="Expert in bridging creative vision with technical execution. Major productions include Star Wars: Andor, The Crown, and Wonder Woman.">
+    <meta property="og:image" content="WhatsApp Image 2026-03-02 at 15.04.17.jpeg">
+
+    <!-- Interlocking DO Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 20v60h15c20 0 35-15 35-30s-15-30-35-30H20z' fill='none' stroke='black' stroke-width='8'/><circle cx='65' cy='50' r='30' fill='none' stroke='black' stroke-width='8'/></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP for Liquid Cursor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "@id": "https://danieladeosma.com/",
+          "url": "https://danieladeosma.com/",
+          "name": "Daniela de Osma Portfolio",
+          "description": "Professional portfolio of Daniela de Osma, Film Production Coordinator."
+        },
+        {
+          "@type": "Person",
+          "@id": "https://danieladeosma.com/#person",
+          "name": "Daniela de Osma",
+          "jobTitle": "Film Production Coordinator",
+          "description": "Production Coordinator and Assistant Director with experience in major studios like Disney, Netflix, and Amazon.",
+          "knowsLanguage": ["en", "es", "de", "fr"],
+          "sameAs": [
+            "https://www.linkedin.com/in/daniela-de-osma/",
+            "https://www.imdb.com/find/?q=Daniela+de+Osma"
+          ],
+          "mainEntityOfPage": {
+            "@id": "https://danieladeosma.com/"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enables dark mode toggling via class
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#f5f5f4',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            cursor: none; /* Hide default cursor */
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lang-btn {
+            cursor: pointer;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .lang-btn.active {
+            opacity: 1;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        .cinematic-img {
+            filter: grayscale(100%);
+            transition: filter 0.7s ease, transform 0.7s ease;
+        }
+        .cinematic-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .credit-table tr {
+            transition: background-color 0.2s;
+        }
+
+        #liquid-cursor {
+            pointer-events: none;
+            position: fixed;
+            z-index: 9999;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128, 128, 128, 0.5) 90%, transparent 20%);
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            backdrop-filter: blur(2px);
+            transform-origin: center;
+            top: 0;
+            left: 0;
+        }
+
+        /* Curtain Animation Class */
+        #theme-curtain {
+            transition: transform 550ms cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        /* Ethereal Shadow Background Styles */
+        .ethereal-bg {
+            position: absolute;
+            inset: -60px;
+            filter: url(#ethereal-filter) blur(4px);
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .ethereal-mask {
+            background-color: rgba(120, 113, 108, 0.5);
+            mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            width: 100%;
+            height: 100%;
+        }
+        .noise-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png");
+            background-size: 240px;
+            background-repeat: repeat;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-stone-900 selection:text-white dark:selection:bg-[#dfd8c6] dark:selection:text-stone-900 bg-[#f5f5f4] dark:bg-[#0e0e0e] text-stone-900 dark:text-[#dfd8c6] transition-colors duration-300">
+
+    <!-- SVG Filters for Ethereal Shadow -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="ethereal-filter">
+                <feTurbulence result="undulation" numOctaves="2" baseFrequency="0.0007,0.003" seed="0" type="turbulence" />
+                <feColorMatrix id="hue-matrix" in="undulation" type="hueRotate" values="180" />
+                <feColorMatrix in="dist" result="circulation" type="matrix" values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0" />
+                <feDisplacementMap in="SourceGraphic" in2="circulation" scale="60" result="dist" />
+                <feDisplacementMap in="dist" in2="undulation" scale="60" result="output" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Custom Cursor -->
+    <div id="liquid-cursor"></div>
+
+    <!-- Theme Curtain Overlay -->
+    <div id="theme-curtain" class="fixed inset-0 z-[9997] pointer-events-none transform origin-top scale-y-0 bg-[#0e0e0e]"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-colors duration-300 bg-[#f5f5f4]/90 dark:bg-[#0e0e0e]/90 backdrop-blur-md border-b border-stone-200 dark:border-[#dfd8c6]/10 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Interlocking DO Logo -->
+            <a href="#" class="flex items-center text-stone-900 dark:text-[#dfd8c6]">
+                <svg class="w-12 h-8" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="6" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 10v40h12c12 0 22-8 22-20s-10-20-22-20H10z" />
+                    <circle cx="55" cy="30" r="20" />
+                </svg>
+            </a>
+
+            <div class="flex items-center gap-6 md:gap-10">
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-stone-600 dark:text-[#dfd8c6]/70 uppercase">
+                    <a href="#about" class="hover:text-stone-900 dark:hover:text-white transition-colors" data-i18n="nav_about">About</a>
+                    <a href="#expertise" class="hover:text-stone-900 dark:hover:text-white transition-colors" data-i18n="nav_services">Expertise</a>
+                    <a href="#credits" class="hover:text-stone-900 dark:hover:text-white transition-colors" data-i18n="nav_credits">Credits</a>
+                    <a href="#portfolio" class="hover:text-stone-900 dark:hover:text-white transition-colors" data-i18n="nav_projects">Portfolio</a>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center gap-3 md:gap-4 text-xs font-bold text-stone-900 dark:text-[#dfd8c6] border-l border-stone-300 dark:border-[#dfd8c6]/20 pl-6 md:pl-8">
+                    <button onclick="setLanguage('en')" class="lang-btn active" id="btn-en">EN</button>
+                    <button onclick="setLanguage('es')" class="lang-btn" id="btn-es">ES</button>
+                    <button onclick="setLanguage('de')" class="lang-btn" id="btn-de">DE</button>
+                    <button onclick="setLanguage('fr')" class="lang-btn" id="btn-fr">FR</button>
+                </div>
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="relative w-9 h-9 rounded-full flex items-center justify-center bg-[#f5f5f4] dark:bg-[#0e0e0e] text-stone-900 dark:text-[#dfd8c6] shadow-[0_0_0_1.5px_rgba(0,0,0,0.15)] dark:shadow-[0_0_0_1.5px_rgba(255,255,255,0.25)] hover:scale-110 transition-all duration-300 outline-none ml-2 flex-shrink-0 z-[9999] cursor-none">
+                    <svg class="dark:hidden block pointer-events-none" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+                    <svg class="hidden dark:block pointer-events-none" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <!-- Ethereal Background Effect -->
+        <div class="ethereal-bg">
+            <div class="ethereal-mask"></div>
+        </div>
+        <div class="noise-overlay"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="max-w-4xl fade-in-up">
+                <p class="text-xs font-bold tracking-[0.2em] text-stone-500 dark:text-[#dfd8c6]/50 uppercase mb-6" data-i18n="hero_role">
+                    Film Production Coordinator & AD
+                </p>
+                <h1 class="font-display text-6xl md:text-8xl lg:text-[7rem] font-bold leading-[0.95] tracking-tight text-stone-900 dark:text-[#dfd8c6] mb-8">
+                    <span class="block" data-i18n="hero_title_1">Transforming</span>
+                    <span class="block text-stone-400 dark:text-[#dfd8c6]/40" data-i18n="hero_title_highlight">Creative Chaos</span>
+                    <span class="block" data-i18n="hero_title_2">into Precision.</span>
+                </h1>
+                
+                <div class="flex flex-col md:flex-row gap-8 md:items-end mt-16">
+                    <p class="text-xl md:text-2xl text-stone-600 dark:text-[#dfd8c6]/70 max-w-xl font-light leading-relaxed" data-i18n="hero_text">
+                        International experience in high-level productions like <strong class="font-bold text-stone-900 dark:text-[#dfd8c6]">Star Wars: Andor</strong>, <strong class="font-bold text-stone-900 dark:text-[#dfd8c6]">The Crown</strong>, and <strong class="font-bold text-stone-900 dark:text-[#dfd8c6]">Wonder Woman</strong>.
+                    </p>
+                    
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-stone-900 dark:bg-[#dfd8c6] text-white dark:text-[#0e0e0e] font-semibold hover:bg-stone-700 dark:hover:bg-white transition-colors gap-3 rounded-none whitespace-nowrap cursor-none">
+                        <span data-i18n="btn_talk">Contact Me</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Brands Section (Adapted from React HoverBrandLogo) -->
+    <section id="brands" class="py-16 bg-[#f5f5f4] dark:bg-[#0e0e0e] border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-12 w-full">
+                <!-- Left: Text -->
+                <div class="flex-shrink-0 text-center sm:text-left">
+                    <p class="text-xs font-bold tracking-[0.2em] text-stone-500 dark:text-[#dfd8c6]/50 uppercase mb-2">
+                        Trusted By
+                    </p>
+                    <div class="relative h-8 overflow-hidden">
+                        <p id="active-brand-name" class="text-2xl md:text-3xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] tracking-tight whitespace-nowrap">
+                            Leading Studios
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Icon Grid -->
+                <div class="grid grid-cols-3 sm:flex sm:flex-wrap items-center justify-center sm:justify-end gap-3 w-full sm:w-auto">
+                    <!-- Netflix -->
+                    <button class="brand-btn group p-4 rounded-xl border border-transparent hover:border-stone-300 dark:hover:border-[#dfd8c6]/20 transition-all duration-300 cursor-none" data-brand="Netflix">
+                        <img src="logo_netflix.png" alt="Netflix" class="w-8 h-8 object-contain opacity-40 group-hover:opacity-100 dark:invert transition-all">
+                    </button>
+                    <!-- Disney -->
+                    <button class="brand-btn group p-4 rounded-xl border border-transparent hover:border-stone-300 dark:hover:border-[#dfd8c6]/20 transition-all duration-300 cursor-none" data-brand="Disney / Lucasfilm">
+                        <img src="logo_disney.png" alt="Disney" class="w-10 h-10 object-contain opacity-40 group-hover:opacity-100 dark:invert transition-all">
+                    </button>
+                    <!-- Warner Bros -->
+                    <button class="brand-btn group p-4 rounded-xl border border-transparent hover:border-stone-300 dark:hover:border-[#dfd8c6]/20 transition-all duration-300 cursor-none" data-brand="Warner Bros.">
+                        <img src="logo_warner.png" alt="Warner Bros" class="w-10 h-10 object-contain opacity-40 group-hover:opacity-100 dark:invert transition-all">
+                    </button>
+                    <!-- Amazon -->
+                    <button class="brand-btn group p-4 rounded-xl border border-transparent hover:border-stone-300 dark:hover:border-[#dfd8c6]/20 transition-all duration-300 cursor-none" data-brand="Amazon Studios">
+                        <i class="fa-brands fa-amazon text-3xl text-stone-400 group-hover:text-stone-900 dark:group-hover:text-[#dfd8c6] transition-colors"></i>
+                    </button>
+                    <!-- Apple -->
+                    <button class="brand-btn group p-4 rounded-xl border border-transparent hover:border-stone-300 dark:hover:border-[#dfd8c6]/20 transition-all duration-300 cursor-none" data-brand="Apple TV+">
+                        <i class="fa-brands fa-apple text-3xl text-stone-400 group-hover:text-stone-900 dark:group-hover:text-[#dfd8c6] transition-colors"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Stats Section -->
+    <section id="about" class="py-32 bg-[#f5f5f4] dark:bg-[#0e0e0e] border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-900 dark:text-[#dfd8c6] mb-8" data-i18n="about_title">
+                        Bridging creative vision with technical execution.
+                    </h2>
+                    <p class="text-lg text-stone-600 dark:text-[#dfd8c6]/70 leading-relaxed font-light" data-i18n="about_text">
+                        With over 6 years of experience in the European audiovisual industry, I combine an analytical mindset with deep creative sensitivity. Fluent in 4 languages, I have managed large-scale productions, led cross-functional teams, and ensured flawless management on global sets.
+                    </p>
+                </div>
+                
+                <!-- Minimalist Stats -->
+                <div class="grid grid-cols-2 gap-x-8 gap-y-12">
+                    <div class="border-l border-stone-300 dark:border-[#dfd8c6]/20 pl-6 transition-colors duration-300">
+                        <div class="text-4xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">6+</div>
+                        <div class="text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase" data-i18n="stat_exp">Years Experience</div>
+                    </div>
+                    <div class="border-l border-stone-300 dark:border-[#dfd8c6]/20 pl-6 transition-colors duration-300">
+                        <div class="text-4xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">4</div>
+                        <div class="text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase" data-i18n="stat_lang">Languages</div>
+                    </div>
+                    <div class="border-l border-stone-300 dark:border-[#dfd8c6]/20 pl-6 transition-colors duration-300">
+                        <div class="text-4xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">15+</div>
+                        <div class="text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase" data-i18n="stat_prods">Major Productions</div>
+                    </div>
+                    <div class="border-l border-stone-300 dark:border-[#dfd8c6]/20 pl-6 transition-colors duration-300">
+                        <div class="text-4xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">100%</div>
+                        <div class="text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase" data-i18n="stat_commit">Commitment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Expertise -->
+    <section id="expertise" class="py-32 bg-[#f5f5f4] dark:bg-[#0e0e0e] border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-900 dark:text-[#dfd8c6] mb-16" data-i18n="services_title">
+                Areas of Expertise
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-x-12 gap-y-16">
+                <!-- Service 1 -->
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 dark:text-[#dfd8c6] mb-4 pb-4 border-b border-stone-300 dark:border-[#dfd8c6]/20 transition-colors duration-300" data-i18n="service_1_title">Direction & Set</h3>
+                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed mb-6 font-light" data-i18n="service_1_text">
+                        Meticulous shoot planning, call sheet management, and proactive conflict resolution to maintain creative flow.
+                    </p>
+                    <ul class="text-xs font-semibold tracking-wide text-stone-900 dark:text-[#dfd8c6] space-y-3 uppercase">
+                        <li data-i18n="service_1_li1">Safety protocols</li>
+                        <li data-i18n="service_1_li2">Time optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 dark:text-[#dfd8c6] mb-4 pb-4 border-b border-stone-300 dark:border-[#dfd8c6]/20 transition-colors duration-300" data-i18n="service_2_title">Production Coordination</h3>
+                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed mb-6 font-light" data-i18n="service_2_text">
+                        Leadership of multidisciplinary teams and resource management. Efficient liaison between creative and technical departments.
+                    </p>
+                    <ul class="text-xs font-semibold tracking-wide text-stone-900 dark:text-[#dfd8c6] space-y-3 uppercase">
+                        <li data-i18n="service_2_li1">Global schedules</li>
+                        <li data-i18n="service_2_li2">Budget management</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 dark:text-[#dfd8c6] mb-4 pb-4 border-b border-stone-300 dark:border-[#dfd8c6]/20 transition-colors duration-300" data-i18n="service_3_title">Communication & Cast</h3>
+                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed mb-6 font-light" data-i18n="service_3_text">
+                        VIP talent management and interdepartmental communication. Native/Bilingual ability to unify international teams.
+                    </p>
+                    <ul class="text-xs font-semibold tracking-wide text-stone-900 dark:text-[#dfd8c6] space-y-3 uppercase">
+                        <li data-i18n="service_3_li1">ES / EN / DE / FR</li>
+                        <li data-i18n="service_3_li2">Public Relations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits / Filmography (Table Design) -->
+    <section id="credits" class="py-32 bg-[#f5f5f4] dark:bg-[#0e0e0e] border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-900 dark:text-[#dfd8c6]" data-i18n="credits_title">
+                    Selected Credits
+                </h2>
+                <a href="https://www.linkedin.com/in/daniela-de-osma/" target="_blank" rel="noopener noreferrer" class="group cursor-none text-sm font-bold uppercase tracking-wider text-stone-900 dark:text-[#dfd8c6] mt-6 md:mt-0 flex items-center gap-2 hover:opacity-70 transition-opacity">
+                    <span data-i18n="imdb_link">LinkedIn Profile</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse credit-table">
+                    <thead>
+                        <tr>
+                            <th class="py-4 pr-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10 w-24">Year</th>
+                            <th class="py-4 px-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10">Project</th>
+                            <th class="py-4 px-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10 hidden md:table-cell">Role</th>
+                            <th class="py-4 pl-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10 hidden sm:table-cell">Studio</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm font-medium">
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a]">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2024</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Culpa Tuya / Culpa Nuestra</td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell" data-i18n="role_coord">Cast Assist 2nd</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Prime Video</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a]">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2023</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">The Crown <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S6</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell" data-i18n="role_ad">Crowd Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Left Bank / Netflix</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a]">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2022</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Rings of Power <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S2</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell" data-i18n="role_ad_crowd">Crowd Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Amazon Studios</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a]">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2021</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Star Wars: Andor <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S1</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell" data-i18n="role_cast">Cast Assistant</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Lucasfilm</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a]">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2021</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Ted Lasso <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S3</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell" data-i18n="role_ad_base">Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Apple TV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Portfolio -->
+    <section id="portfolio" class="py-32 bg-stone-900 text-white dark:bg-black transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 text-white" data-i18n="portfolio_title">
+                Behind The Scenes
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="aspect-[4/3] overflow-hidden bg-stone-800 relative group cursor-none">
+                    <img src="do_accion.jpeg" alt="Daniela on set" class="w-full h-full object-cover cinematic-img">
+                    <div class="absolute bottom-4 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-xs font-bold tracking-widest uppercase">Action Shot</span>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] overflow-hidden bg-stone-800 relative group cursor-none">
+                    <img src="do_accion1.jpeg" alt="Production coordination" class="w-full h-full object-cover cinematic-img">
+                    <div class="absolute bottom-4 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-xs font-bold tracking-widest uppercase">Behind the Scenes</span>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] overflow-hidden bg-stone-800 relative group cursor-none">
+                    <img src="do_accion2.jpeg" alt="Set supervision" class="w-full h-full object-cover cinematic-img">
+                    <div class="absolute bottom-4 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-xs font-bold tracking-widest uppercase">Set Supervision</span>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] overflow-hidden bg-stone-800 relative group cursor-none">
+                    <img src="do_accion3.jpeg" alt="Production flow" class="w-full h-full object-cover cinematic-img">
+                    <div class="absolute bottom-4 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-xs font-bold tracking-widest uppercase">Production Flow</span>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] overflow-hidden bg-stone-800 relative group cursor-none">
+                    <img src="do_accion4.jpeg" alt="Coordination" class="w-full h-full object-cover cinematic-img">
+                    <div class="absolute bottom-4 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-xs font-bold tracking-widest uppercase">Coordination</span>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] overflow-hidden bg-stone-800 relative group cursor-none">
+                    <img src="do_accion5.jpeg" alt="Cinematic frame" class="w-full h-full object-cover object-top cinematic-img">
+                    <div class="absolute bottom-4 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-xs font-bold tracking-widest uppercase">Cinematic Frame</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-[#f5f5f4] dark:bg-[#0e0e0e] pt-32 pb-12 border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 mb-24">
+                <div>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold text-stone-900 dark:text-[#dfd8c6] mb-6" data-i18n="footer_title">
+                        Ready to elevate<br>your production?
+                    </h2>
+                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-lg max-w-md font-light" data-i18n="footer_text">
+                        Available for new projects in Europe and globally. Let's discuss how I can bring logistical precision to your creative vision.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col justify-center items-start md:items-end space-y-6">
+                    <a href="mailto:danieladeosma@hotmail.com" class="cursor-none text-2xl md:text-3xl font-medium text-stone-900 dark:text-[#dfd8c6] hover:text-stone-500 dark:hover:text-white transition-colors">
+                        danieladeosma@hotmail.com
+                    </a>
+                    <a href="tel:+34603805463" class="cursor-none text-xl md:text-2xl font-medium text-stone-900 dark:text-[#dfd8c6] hover:text-stone-500 dark:hover:text-white transition-colors">
+                        +34 603 805 463
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-300 dark:border-[#dfd8c6]/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-semibold tracking-widest uppercase text-stone-500 dark:text-[#dfd8c6]/50">
+                <p>&copy; 2026 Daniela de Osma.</p>
+                <div class="flex gap-8 mt-6 md:mt-0 text-stone-900 dark:text-[#dfd8c6] text-base">
+                    <a href="https://www.linkedin.com/in/daniela-de-osma/" target="_blank" rel="noopener noreferrer" class="cursor-none hover:text-stone-500 dark:hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.imdb.com/find/?q=Daniela+de+Osma" target="_blank" rel="noopener noreferrer" class="cursor-none hover:text-stone-500 dark:hover:text-white transition-colors"><i class="fa-brands fa-imdb"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Translations Dictionary
+        const translations = {
+            en: {
+                nav_about: "About", nav_services: "Expertise", nav_credits: "Credits", nav_projects: "Portfolio",
+                hero_role: "Film Production Coordinator & AD", hero_title_1: "Transforming", hero_title_highlight: "Creative Chaos", hero_title_2: "into Precision.",
+                hero_text: "International experience in high-level productions like <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Star Wars: Andor</strong>, <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>The Crown</strong>, and <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Wonder Woman</strong>.",
+                btn_talk: "Contact Me", about_title: "Bridging creative vision with technical execution.", about_text: "With over 6 years of experience in the European audiovisual industry, I combine an analytical mindset with deep creative sensitivity. Fluent in 4 languages, I have managed large-scale productions, led cross-functional teams, and ensured flawless management on global sets.",
+                stat_exp: "Years Experience", stat_lang: "Languages", stat_prods: "Major Productions", stat_commit: "Commitment",
+                services_title: "Areas of Expertise", service_1_title: "Direction & Set", service_1_text: "Meticulous shoot planning, call sheet management, and proactive conflict resolution to maintain creative flow.", service_1_li1: "Safety protocols", service_1_li2: "Time optimization",
+                service_2_title: "Production Coordination", service_2_text: "Leadership of multidisciplinary teams and resource management. Efficient liaison between creative and technical departments.", service_2_li1: "Global schedules", service_2_li2: "Budget management",
+                service_3_title: "Communication & Cast", service_3_text: "VIP talent management and interdepartmental communication. Native/Bilingual ability to unify international teams.", service_3_li1: "ES / EN / DE / FR", service_3_li2: "Public Relations",
+                credits_title: "Selected Credits", imdb_link: "LinkedIn Profile", role_coord: "Cast Assist 2nd", role_ad: "Assistant Director", role_ad_crowd: "Crowd Assistant Director", role_ad_base: "Assistant Director", role_cast: "Cast Assistant",
+                portfolio_title: "Behind The Scenes", footer_title: "Ready to elevate<br>your production?", footer_text: "Available for new projects in Europe and globally. Let's discuss how I can bring logistical precision to your creative vision."
+            },
+            es: {
+                nav_about: "Sobre mí", nav_services: "Especialidad", nav_credits: "Créditos", nav_projects: "Portfolio",
+                hero_role: "Coordinación de Producción & AD", hero_title_1: "Transformando", hero_title_highlight: "El Caos Creativo", hero_title_2: "en Precisión.",
+                hero_text: "Experiencia internacional en producciones como <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Star Wars: Andor</strong>, <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>The Crown</strong>, y <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Wonder Woman</strong>.",
+                btn_talk: "Contactar", about_title: "Conectando la visión creativa con la ejecución técnica.", about_text: "Con más de 6 años de experiencia en la industria audiovisual europea, combino una mentalidad analítica con sensibilidad creativa. Fluida en 4 idiomas, he gestionado grandes producciones asegurando un flujo impecable en el set.",
+                stat_exp: "Años Experiencia", stat_lang: "Idiomas", stat_prods: "Producciones Major", stat_commit: "Compromiso",
+                services_title: "Áreas de Especialidad", service_1_title: "Dirección y Set", service_1_text: "Planificación meticulosa de rodaje, gestión de hojas de llamado y resolución proactiva de conflictos para mantener el flujo creativo.", service_1_li1: "Protocolos de seguridad", service_1_li2: "Optimización de tiempo",
+                service_2_title: "Coordinación de Producción", service_2_text: "Liderazgo de equipos multidisciplinares y gestión de recursos. Enlace eficiente entre departamentos creativos y técnicos.", service_2_li1: "Cronogramas globales", service_2_li2: "Gestión de presupuesto",
+                service_3_title: "Comunicación y Elenco", service_3_text: "Gestión de talento VIP y comunicación interdepartamental. Habilidad nativa para unificar equipos internacionales.", service_3_li1: "ES / EN / DE / FR", service_3_li2: "Relaciones Públicas",
+                credits_title: "Créditos Destacados", imdb_link: "Perfil LinkedIn", role_coord: "Cast Assist 2nd", role_ad: "Asistente de Dirección", role_ad_crowd: "Crowd Asistente de Dirección", role_ad_base: "Asistente de Dirección", role_cast: "Asistente de Cast",
+                portfolio_title: "Detrás de Cámaras", footer_title: "¿Lista para elevar<br>tu producción?", footer_text: "Disponible para nuevos proyectos en Europa y globalmente. Hablemos de cómo aportar precisión logística a tu visión."
+            },
+            fr: {
+                nav_about: "À propos", nav_services: "Expertise", nav_credits: "Crédits", nav_projects: "Portfolio",
+                hero_role: "Coordinatrice de Production & AD", hero_title_1: "Transformer", hero_title_highlight: "Le Chaos Créatif", hero_title_2: "en Précision.",
+                hero_text: "Expérience internationale sur des productions telles que <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Star Wars: Andor</strong>, <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>The Crown</strong>, et <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Wonder Woman</strong>.",
+                btn_talk: "Contactez-moi", about_title: "Relier la vision créative à l'exécution technique.", about_text: "Avec plus de 6 ans d'expérience dans l'industrie audiovisuelle européenne, je combine un esprit analytique avec une sensibilité créative. Courante en 4 langues.",
+                stat_exp: "Années d'Expérience", stat_lang: "Langues", stat_prods: "Productions Majeures", stat_commit: "Engagement",
+                services_title: "Domaines d'Expertise", service_1_title: "Direction & Plateau", service_1_text: "Planification méticuleuse des tournages et résolution proactive des conflits.", service_1_li1: "Protocoles de sécurité", service_1_li2: "Optimisation du temps",
+                service_2_title: "Coordination de Production", service_2_text: "Direction d'équipes multidisciplinaires et gestion des ressources.", service_2_li1: "Plannings globaux", service_2_li2: "Gestion budgétaire",
+                service_3_title: "Communication & Casting", service_3_text: "Gestion des talents VIP et communication interdépartementale.", service_3_li1: "ES / EN / DE / FR", service_3_li2: "Relations Publiques",
+                credits_title: "Crédits Sélectionnés", imdb_link: "Profil LinkedIn", role_coord: "Cast Assist 2nd", role_ad: "Assistant Réalisateur", role_ad_crowd: "Crowd Assistant Réalisateur", role_ad_base: "Assistant Réalisateur", role_cast: "Assistant Casting",
+                portfolio_title: "Dans les Coulisses", footer_title: "Prêt à élever<br>votre production?", footer_text: "Disponible pour de nouveaux projets en Europa et dans le monde entier."
+            },
+            de: {
+                nav_about: "Über mich", nav_services: "Expertise", nav_credits: "Credits", nav_projects: "Portfolio",
+                hero_role: "Produktionskoordinatorin & AD", hero_title_1: "Verwandle", hero_title_highlight: "Kreatives Chaos", hero_title_2: "in Präzision.",
+                hero_text: "Internationale Erfahrung bei Produktionen wie <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Star Wars: Andor</strong>, <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>The Crown</strong> und <strong class='font-bold text-stone-900 dark:text-[#dfd8c6]'>Wonder Woman</strong>.",
+                btn_talk: "Kontaktieren Sie mich", about_title: "Kreative Vision mit technischer Umsetzung verbinden.", about_text: "Mit über 6 Jahren Erfahrung in der europäischen audiovisuellen Industrie verbinde ich eine analytische Denkweise mit tiefer kreativer Sensibilität. Fließend in 4 Sprachen.",
+                stat_exp: "Jahre Erfahrung", stat_lang: "Sprachen", stat_prods: "Großproduktionen", stat_commit: "Engagement",
+                services_title: "Fachgebiete", service_1_title: "Regie & Set", service_1_text: "Sorgfältige Drehplanung und proaktive Konfliktlösung.", service_1_li1: "Sicherheitsprotokolle", service_1_li2: "Zeitoptimierung",
+                service_2_title: "Produktionskoordination", service_2_text: "Führung multidisziplinärer Teams und Ressourcenmanagement.", service_2_li1: "Globale Zeitpläne", service_2_li2: "Budgetverwaltung",
+                service_3_title: "Kommunikation & Cast", service_3_text: "VIP-Talentmanagement und interdisziplinäre Kommunikation.", service_3_li1: "ES / EN / DE / FR", service_3_li2: "Öffentlichkeitsarbeit",
+                credits_title: "Ausgewählte Credits", imdb_link: "LinkedIn Profil", role_coord: "Cast Assist 2nd", role_ad: "Regieassistentin", role_ad_crowd: "Crowd Regieassistentin", role_ad_base: "Regieassistentin", role_cast: "Cast Assistentin",
+                portfolio_title: "Hinter den Kulissen", footer_title: "Bereit, Ihre Produktion<br>zu mejorar?", footer_text: "Verfügbar für neue Projekte in Europa und weltweit."
+            }
+        };
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+        }
+
+        // --- Theme Toggle Logic (Curtain Animation) ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeCurtain = document.getElementById('theme-curtain');
+        let isDark = document.documentElement.classList.contains('dark');
+
+        // Optional: Check system preference on load
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+            isDark = true;
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const nextThemeDark = !isDark;
+            // Set curtain color (t.pageBg tokens from your React code)
+            themeCurtain.style.backgroundColor = nextThemeDark ? '#0e0e0e' : '#f3ede1';
+            
+            // Drop curtain
+            themeCurtain.style.transform = 'scaleY(1)';
+
+            setTimeout(() => {
+                // Change theme classes
+                if (nextThemeDark) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                isDark = nextThemeDark;
+
+                // Raise curtain
+                setTimeout(() => {
+                    themeCurtain.style.transform = 'scaleY(0)';
+                }, 50); // slight delay to ensure repaint
+            }, 550); // Matches duration in CSS
+        });
+
+        // --- Liquid Cursor Animation Logic (GSAP) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.getElementById('liquid-cursor');
+            let prevPos = { x: 0, y: 0 };
+            let prevAngle = 0;
+            const size = 44;
+            
+            cursor.style.width = `${size}px`;
+            cursor.style.height = `${size}px`;
+
+            const moveDrop = (e) => {
+                const dx = e.clientX - prevPos.x;
+                const dy = e.clientY - prevPos.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+                let delta = angle - prevAngle;
+                if (delta > 180) delta -= 360;
+                if (delta < -180) delta += 360;
+
+                const smoothingFactor = 0.2;
+                const smoothAngle = prevAngle + delta * smoothingFactor;
+                const maxStretch = 1.2;
+                const stretch = Math.min(distance / 30, maxStretch);
+                const absDx = Math.abs(dx);
+                const absDy = Math.abs(dy);
+                const total = absDx + absDy || 1;
+                const xRatio = absDx / total;
+
+                const scaleX = 1 + xRatio * stretch;
+                const scaleY = 1 - xRatio * stretch * 0.3;
+
+                gsap.to(cursor, {
+                    duration: 1,
+                    left: e.clientX - size / 2,
+                    top: e.clientY - size / 2,
+                    scaleX,
+                    scaleY,
+                    rotation: smoothAngle,
+                    ease: "power2.out",
+                });
+
+                prevAngle = smoothAngle;
+                prevPos = { x: e.clientX, y: e.clientY };
+            };
+
+            const clickDrop = () => {
+                gsap.to(cursor, {
+                    scale: 1.3,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        gsap.to(cursor, {
+                            scale: 1,
+                            duration: 0.4,
+                            ease: "bounce.out",
+                        });
+                    },
+                });
+            };
+
+            window.addEventListener("mousemove", moveDrop);
+            window.addEventListener("click", clickDrop);
+            
+            if (window.matchMedia("(pointer: coarse)").matches) {
+                cursor.style.display = 'none';
+                document.body.style.cursor = 'auto';
+            }
+        });
+        // --- Brands Hover Animation Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const brandButtons = document.querySelectorAll('.brand-btn');
+            const brandNameEl = document.getElementById('active-brand-name');
+            const defaultText = "Leading Studios";
+
+            brandButtons.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    const brandName = btn.getAttribute('data-brand');
+                    
+                    // Dim others
+                    brandButtons.forEach(b => {
+                        if (b !== btn) b.style.opacity = '0.3';
+                    });
+
+                    // Animate Text out and in
+                    gsap.to(brandNameEl, {
+                        y: -20,
+                        opacity: 0,
+                        duration: 0.15,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            brandNameEl.textContent = brandName;
+                            gsap.fromTo(brandNameEl, 
+                                { y: 20, opacity: 0 },
+                                { y: 0, opacity: 1, duration: 0.2, ease: "power2.out" }
+                            );
+                        }
+                    });
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    // Reset opacity
+                    brandButtons.forEach(b => b.style.opacity = '1');
+
+                    // Reset text
+                    gsap.to(brandNameEl, {
+                        y: -20,
+                        opacity: 0,
+                        duration: 0.15,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            brandNameEl.textContent = defaultText;
+                            gsap.fromTo(brandNameEl, 
+                                { y: 20, opacity: 0 },
+                                { y: 0, opacity: 1, duration: 0.2, ease: "power2.out" }
+                            );
+                        }
+                    });
+                });
+            });
+        });
+
+        // --- Ethereal Shadow Animation ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const hueMatrix = document.getElementById('hue-matrix');
+            if (hueMatrix) {
+                gsap.to({ val: 0 }, {
+                    val: 360,
+                    duration: 4,
+                    repeat: -1,
+                    ease: "none",
+                    onUpdate: function() {
+                        hueMatrix.setAttribute("values", this.targets()[0].val);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
