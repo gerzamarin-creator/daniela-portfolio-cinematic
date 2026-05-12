@@ -14,10 +14,12 @@
 
     <!-- Open Graph / WhatsApp -->
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://danieladeosma.com/">
+    <meta property="og:url" content="https://gerzamarin-creator.github.io/daniela-portfolio-cinematic/">
     <meta property="og:title" content="Daniela de Osma | Film Production Coordinator">
     <meta property="og:description" content="Expert in bridging creative vision with technical execution. Major productions include Star Wars: Andor, The Crown, and Wonder Woman.">
-    <meta property="og:image" content="DanielaOsma.jpeg">
+    <meta property="og:image" content="https://gerzamarin-creator.github.io/daniela-portfolio-cinematic/DanielaOsma.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Interlocking DO Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 20v60h15c20 0 35-15 35-30s-15-30-35-30H20z' fill='none' stroke='black' stroke-width='8'/><circle cx='65' cy='50' r='30' fill='none' stroke='black' stroke-width='8'/></svg>">
@@ -277,7 +279,7 @@
         </div>
     </header>
 
-    <!-- Brands Section -->
+    <!-- Brands Section (Adapted from React HoverBrandLogo) -->
     <section id="brands" class="py-16 bg-[#f5f5f4] dark:bg-[#0e0e0e] border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-12 w-full">
@@ -403,95 +405,80 @@
         </div>
     </section>
 
-    <!-- Credits / Filmography (Modern Editorial Design) -->
+    <!-- Credits / Filmography (Timeline Table Design) -->
     <section id="credits" class="py-32 bg-[#f5f5f4] dark:bg-[#0e0e0e] border-t border-stone-200 dark:border-[#dfd8c6]/10 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <div>
-                    <p class="text-xs font-bold tracking-[0.2em] text-stone-500 dark:text-[#dfd8c6]/50 uppercase mb-4" data-i18n="credits_subtitle">Career Path</p>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-900 dark:text-[#dfd8c6]" data-i18n="credits_title">
-                        Filmography Highlights
-                    </h2>
-                </div>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-900 dark:text-[#dfd8c6]" data-i18n="credits_title">
+                    Selected Credits
+                </h2>
                 <a href="https://www.linkedin.com/in/daniela-de-osma/" target="_blank" rel="noopener noreferrer" class="group cursor-none text-sm font-bold uppercase tracking-wider text-stone-900 dark:text-[#dfd8c6] mt-6 md:mt-0 flex items-center gap-2 hover:opacity-70 transition-opacity">
-                    <span data-i18n="imdb_link">Full LinkedIn Profile</span>
+                    <span data-i18n="imdb_link">LinkedIn Profile</span>
                     <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
 
-            <!-- Featured Highlights Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-200 dark:bg-[#dfd8c6]/10 border border-stone-200 dark:border-[#dfd8c6]/10 overflow-hidden">
-                <!-- Andor -->
-                <div class="bg-[#f5f5f4] dark:bg-[#0e0e0e] p-8 md:p-12 hover:bg-white dark:hover:bg-stone-900/50 transition-colors">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-bold tracking-widest text-stone-400">2020 — 2021</span>
-                        <img src="logo_disney.png" alt="Lucasfilm" class="h-6 object-contain opacity-40 dark:invert">
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">Star Wars: Andor</h3>
-                    <p class="text-stone-500 dark:text-[#dfd8c6]/50 text-sm uppercase font-semibold tracking-wide mb-4">Cast Assistant & Production Assistant</p>
-                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed max-w-xs font-light">Lucasfilm / Disney+ Series. Coordination of cast logistics and production support on a global scale.</p>
-                </div>
-
-                <!-- The Crown -->
-                <div class="bg-[#f5f5f4] dark:bg-[#0e0e0e] p-8 md:p-12 hover:bg-white dark:hover:bg-stone-900/50 transition-colors">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-bold tracking-widest text-stone-400">2022 — 2023</span>
-                        <img src="logo_netflix.png" alt="Netflix" class="h-5 object-contain opacity-40 dark:invert">
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">The Crown <span class="text-lg font-normal opacity-40">S5 & S6</span></h3>
-                    <p class="text-stone-500 dark:text-[#dfd8c6]/50 text-sm uppercase font-semibold tracking-wide mb-4">Crowd Assistant Director</p>
-                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed max-w-xs font-light">Left Bank Pictures / Netflix. Management of large-scale crowd scenes and intricate period production setups.</p>
-                </div>
-
-                <!-- Bad Sisters -->
-                <div class="bg-[#f5f5f4] dark:bg-[#0e0e0e] p-8 md:p-12 hover:bg-white dark:hover:bg-stone-900/50 transition-colors">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-bold tracking-widest text-stone-400">2024</span>
-                        <i class="fa-brands fa-apple text-xl opacity-40 dark:text-[#dfd8c6]"></i>
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">Bad Sisters <span class="text-lg font-normal opacity-40">S2</span></h3>
-                    <p class="text-stone-500 dark:text-[#dfd8c6]/50 text-sm uppercase font-semibold tracking-wide mb-4">Cast Assistant</p>
-                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed max-w-xs font-light">Merman / Apple TV+. Direct coordination and support for leading cast in high-profile international production.</p>
-                </div>
-
-                <!-- Rivals -->
-                <div class="bg-[#f5f5f4] dark:bg-[#0e0e0e] p-8 md:p-12 hover:bg-white dark:hover:bg-stone-900/50 transition-colors">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-bold tracking-widest text-stone-400">2023 — 2024</span>
-                        <img src="logo_disney.png" alt="Disney" class="h-6 object-contain opacity-40 dark:invert">
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-display font-bold text-stone-900 dark:text-[#dfd8c6] mb-2">Rivals</h3>
-                    <p class="text-stone-500 dark:text-[#dfd8c6]/50 text-sm uppercase font-semibold tracking-wide mb-4">Crowd 3rd AD</p>
-                    <p class="text-stone-600 dark:text-[#dfd8c6]/70 text-sm leading-relaxed max-w-xs font-light">Happy Prince / Disney+. Supporting the AD team in managing extras and set coordination for major streaming series.</p>
-                </div>
-            </div>
-
-            <!-- Additional Selected Credits (List) -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 pt-16 border-t border-stone-200 dark:border-[#dfd8c6]/10">
-                <div class="flex flex-col">
-                    <h4 class="font-bold text-stone-900 dark:text-[#dfd8c6]">Ted Lasso <span class="font-normal opacity-50">S3</span></h4>
-                    <p class="text-xs text-stone-500 uppercase tracking-widest mt-1">Assistant Director | Apple TV</p>
-                </div>
-                <div class="flex flex-col">
-                    <h4 class="font-bold text-stone-900 dark:text-[#dfd8c6]">The Diplomat <span class="font-normal opacity-50">S1</span></h4>
-                    <p class="text-xs text-stone-500 uppercase tracking-widest mt-1">Crowd AD | Netflix</p>
-                </div>
-                <div class="flex flex-col">
-                    <h4 class="font-bold text-stone-900 dark:text-[#dfd8c6]">Rings of Power <span class="font-normal opacity-50">S2</span></h4>
-                    <p class="text-xs text-stone-500 uppercase tracking-widest mt-1">Crowd AD | Amazon Studios</p>
-                </div>
-                <div class="flex flex-col">
-                    <h4 class="font-bold text-stone-900 dark:text-[#dfd8c6]">Show Coordinator</h4>
-                    <p class="text-xs text-stone-500 uppercase tracking-widest mt-1">Jubilee Projects (2022)</p>
-                </div>
-                <div class="flex flex-col">
-                    <h4 class="font-bold text-stone-900 dark:text-[#dfd8c6]">3rd AD</h4>
-                    <p class="text-xs text-stone-500 uppercase tracking-widest mt-1">Calamity Films (2022)</p>
-                </div>
-                <div class="flex flex-col">
-                    <h4 class="font-bold text-stone-900 dark:text-[#dfd8c6]">Key Production Assistant</h4>
-                    <p class="text-xs text-stone-500 uppercase tracking-widest mt-1">El Deseo (2019)</p>
-                </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse credit-table">
+                    <thead>
+                        <tr>
+                            <th class="py-4 pr-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10 w-32">Year</th>
+                            <th class="py-4 px-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10">Project</th>
+                            <th class="py-4 px-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10 hidden md:table-cell">Role</th>
+                            <th class="py-4 pl-6 text-xs font-semibold tracking-widest text-stone-500 dark:text-[#dfd8c6]/50 uppercase border-b border-stone-300 dark:border-[#dfd8c6]/10 hidden sm:table-cell">Studio</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm font-medium">
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2024</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Bad Sisters <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S2</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Cast Assistant</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Apple TV+</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2023 — 2024</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Rivals</td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Crowd 3rd AD</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Disney+ / ITV</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2022 — 2023</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">The Crown <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S5 & S6</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Crowd Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Netflix</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2022</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Rings of Power <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S2</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Crowd Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Amazon Studios</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2021 — 2022</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Ted Lasso <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S3</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Apple TV+</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2022</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">The Diplomat <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S1</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Crowd Assistant Director</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Netflix</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2020 — 2021</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Star Wars: Andor <span class="font-normal text-stone-400 dark:text-[#dfd8c6]/40 text-sm ml-2">S1</span></td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Cast & Prod Assistant</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Lucasfilm</td>
+                        </tr>
+                        <tr class="border-b border-stone-200 dark:border-[#dfd8c6]/10 hover:bg-white dark:hover:bg-[#1a1a1a] transition-colors">
+                            <td class="py-6 pr-6 text-stone-500 dark:text-[#dfd8c6]/50">2019 — 2022</td>
+                            <td class="py-6 px-6 font-bold text-stone-900 dark:text-[#dfd8c6] text-lg">Additional Projects</td>
+                            <td class="py-6 px-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden md:table-cell">Coordination / AD</td>
+                            <td class="py-6 pl-6 text-stone-600 dark:text-[#dfd8c6]/70 hidden sm:table-cell">Jubilee, El Deseo</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
